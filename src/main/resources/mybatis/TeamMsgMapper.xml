@@ -1,0 +1,50 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">-->
+<!--<mapper namespace="com.chryl.mapper.TbUserMapper">-->
+
+<!--    <insert id="insertTeamMsg" parameterType="com.game.sharding.dto.TeamMsg">-->
+<!--        INSERT INTO `team_msg` (`sender`, `receiver`, `msgType`, `title`, `bid`, `content`, `readStatus`, `createTime`)-->
+<!--        VALUES (#{sender}, #{receiver}, #{msgType}, #{title}, #{bid}, #{content}, #{readStatus}, #{createTime})-->
+<!--    </insert>-->
+
+<!--    <update id="updateReadStatus">-->
+<!--        update team_msg a-->
+<!--        set a.readStatus=1,-->
+<!--            a.updateTime=now()-->
+<!--        where a.receiver = #{receiver}-->
+<!--          and a.sender = #{sender}-->
+<!--    </update>-->
+
+<!--    <select id="selectUnReadMsgNum" resultType="java.lang.Integer">-->
+<!--        select count(a.id) from team_msg a-->
+<!--        where a.receiver=#{receiver} and a.readStatus=0-->
+<!--        <if test="sender!=null">-->
+<!--            and a.sender=#{sender}-->
+<!--        </if>-->
+<!--    </select>-->
+
+<!--    <select id="selectLastMsg" resultType="com.game.sharding.dto.TeamMsg">-->
+<!--        select *-->
+<!--        from team_msg a-->
+<!--        where a.receiver = #{receiver}-->
+<!--          and a.sender = #{sender}-->
+<!--        order by a.createTime desc limit 1;-->
+<!--    </select>-->
+
+<!--    <select id="selectMsgBySender" resultType="com.game.sharding.dto.TeamMsg">-->
+<!--        select *-->
+<!--        from team_msg a-->
+<!--        where a.receiver = #{receiver}-->
+<!--          and a.sender = #{sender}-->
+<!--        order by a.createTime desc-->
+<!--            limit #{pageNum}, #{pageSize}-->
+<!--    </select>-->
+
+<!--    <select id="selectMsgCount" resultType="java.lang.Integer">-->
+<!--        select count(a.id)-->
+<!--        from team_msg a-->
+<!--        where a.receiver = #{receiver}-->
+<!--          and a.sender = #{sender}-->
+<!--    </select>-->
+
+<!--</mapper>-->
